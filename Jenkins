@@ -1,4 +1,4 @@
-@Library('tomatDeploy') _
+@Library("sharedLibrary") _
 pipeline{
     agent any
 
