@@ -11,7 +11,7 @@ pipeline{
           steps {
             sshagent(['tomcat-server']) {
               sh 'ssh -o StrictHostKeyChecking=no ' target/*.war ec2-user@172.31.11.20:/opt/tomcat8/webapps'
-          }
+            }
           }
         }
     }
