@@ -14,7 +14,6 @@ pipeline{
              
               sh 'scp -o StrictHostKeyChecking=no  target/*.war ec2-user@172.31.11.20:/opt/tomcat8/webapps/'*/
               tomcatDeploy('172.31.11.20','app',tomcat-server')
-            }
           }
         }
     }
