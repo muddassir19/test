@@ -8,7 +8,15 @@ pipeline{
             sh 'mvn clean package'
           }
         }
-        stage('Deploy  tomcat') {
+        stage('Sonar Analaysis'){
+          steps{
+            withSonarQubeEnv('sonar7') {
+                 sh 'mvn sonar:sonar'   
+                }
+                waitForQualityGate abortPipeline: false, credentialsId: 'sonartoken'
+          }
+        }
+        stage('Deploy  tomcat using shared library') {
           steps {
             /* sshagent(['tomcat-server']) {
              
