@@ -25,5 +25,10 @@ pipeline{
              }
           }
         }
+        stage('Build docker image'){
+          steps{
+            sh 'docker build -t muddassir19/web:1.0.0 .'
+          }
+        }
     }
 }
