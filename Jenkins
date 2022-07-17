@@ -1,4 +1,4 @@
-@Library("sharedLibrary") _
+//@Library("sharedLibrary") _
 pipeline{
     agent any
 
@@ -18,10 +18,10 @@ pipeline{
         }
         stage('Deploy  tomcat using shared library') {
           steps {
-            /* sshagent(['tomcat-server']) {
+             sshagent(['tomcat-server']) {
              
-              sh 'scp -o StrictHostKeyChecking=no  target/*.war ec2-user@172.31.11.20:/opt/tomcat8/webapps/'*/
-              tomcatDeploy('172.31.11.20','app','tomcatnew')
+              sh 'scp -o StrictHostKeyChecking=no  target/*.war ec2-user@172.31.11.20:/opt/tomcat8/webapps/'
+             //tomcatDeploy('172.31.11.20','app','tomcatnew')
           }
         }
     }
