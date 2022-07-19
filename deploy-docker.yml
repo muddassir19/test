@@ -14,7 +14,7 @@
      service:
       name: docker
       state: started
-      enable: yes
+      enabled: yes
    - name: Intsall docker-py python module
      pip:
       name: dokcer-py
