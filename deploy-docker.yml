@@ -17,7 +17,7 @@
       enabled: yes
    - name: Intsall docker-py python module
      pip:
-      name: dokcer-py
+      name: docker-py
       state: present
    - name: Start Container
      docker_container:
