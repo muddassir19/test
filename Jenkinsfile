@@ -8,7 +8,7 @@ pipeline{
   stages {
     stage('git checkout') {
       steps{
-         git 'https://github.com/muddassir19/test.git'  
+         git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/muddassir19/test.git'
       }
     }
   }
